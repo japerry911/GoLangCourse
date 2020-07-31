@@ -3,12 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	//var card string = "Ace of Spades"
-	card := "Ace of Spades"
-	//card = "Five of Diamonds"
-	card = newCard()
+	cards := newDeck()
 
-	fmt.Println(card)
+	hand, remainingDeck := deal(cards, 8)
+
+	fmt.Println("Hand:")
+	hand.print()
+
+	fmt.Println("Remaining Deck:")
+	remainingDeck.print()
 }
 
 func newCard() string {
