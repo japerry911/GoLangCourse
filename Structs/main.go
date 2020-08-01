@@ -17,6 +17,14 @@ func main() {
 	jack := person{"Jack", "Sky", contactInfo{"jack@skymail.com", 12345}}
 	jack.lastName = "Skylord"
 	jack.contact.zipCode = 54321
+	//jack.print()
+	//jack.updateName("Skylord")
+	//jack.print()
+	/*jackPointer := &jack
+	jackPointer.print()
+	jackPointer.updateName("Skylord")
+	jackPointer.print()
+	jack.print()*/
 	jack.print()
 	jack.updateName("Skylord")
 	jack.print()
@@ -26,6 +34,6 @@ func (p person) print() {
 	fmt.Printf("%+v\n", p)
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
